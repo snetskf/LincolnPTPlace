@@ -3699,7 +3699,7 @@ namespace WebService.asmx
 
 
                                                 int futurei = 0;
-                                                //additional future availibility breakdown warehousedetails//
+                                                //12/29/2020 additional future availibility breakdown warehousedetails//
                                                 for (int k = 0; k < dt.Rows.Count; k++)  
                                                 {
                                                     if (Convert.ToInt16(dt.Rows[k]["PASORT"].ToString()) > 0)
