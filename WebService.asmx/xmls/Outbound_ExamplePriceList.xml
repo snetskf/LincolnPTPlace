@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skf9:gaiaWs xmlns:skf9="http://www.skf.com/oagis/9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <skf9:xmlContent><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GET_PRICELIST_002 SYSTEM "colinx_get_pricelist_002.dtd">
+<GET_PRICELIST_002>
+	<CNTROLAREA>
+		<BSR>
+			<VERB>GET</VERB>
+			<NOUN>PRICELIST</NOUN>
+			<REVISION>002</REVISION>
+		</BSR>
+		<SENDER>
+			<LOGICALID>SKFSKF</LOGICALID>
+			<COMPONENT>PTPLACE</COMPONENT>
+			<TASK>GET</TASK>
+			<REFERENCEID>code=PTPlace,customer=60599,origin=ptpr,storeid=SKFSKF,userid=85077</REFERENCEID>
+			<CONFIRMATION>0</CONFIRMATION>
+			<LANGUAGE>ENG</LANGUAGE>
+			<CODEPAGE>UTF-8</CODEPAGE>
+			<AUTHID>CLXPTP-SKFSKF-00015887693980054222-0001</AUTHID>
+		</SENDER>
+		<DATETIME qualifier="CREATION">
+			<YEAR>2020</YEAR>
+			<MONTH>5</MONTH>
+			<DAY>6</DAY>
+			<HOUR>8</HOUR>
+			<MINUTE>49</MINUTE>
+			<SECOND>58</SECOND>
+			<SUBSECOND>7</SUBSECOND>
+			<TIMEZONE>-0400</TIMEZONE>
+		</DATETIME>
+	</CNTROLAREA>
+	<DATAAREA>
+		<GET_PRICELIST>
+			<PRICELIST returndata="1">
+				<PRICELSTID>Customer</PRICELSTID>
+				<PARTNRID>60599</PARTNRID>
+				<CURRENCY>USD</CURRENCY>
+				<PRICELIST_USERAREA/>
+				<PRCLSTLINE returndata="1">
+					<LINENUM>1</LINENUM>
+					<PARTREF>
+						<PARTTYPE>Manufacturer</PARTTYPE>
+						<PARTNO>6203</PARTNO>
+						<PARTCLASS></PARTCLASS>
+						<PARTKEY>0000427</PARTKEY>
+						<PARTQUAL>Manufacturer</PARTQUAL>
+					</PARTREF>
+					<PRCLSTLINE_USERAREA>
+						<DATETIME qualifier="REQUIRED">
+							<YEAR>2020</YEAR>
+							<MONTH>5</MONTH>
+							<DAY>6</DAY>
+							<HOUR>0</HOUR>
+							<MINUTE>0</MINUTE>
+							<SECOND>0</SECOND>
+							<SUBSECOND>0</SUBSECOND>
+							<TIMEZONE>-0400</TIMEZONE>
+						</DATETIME>
+						<QUANTITY qualifier="OTHER">
+							<VALUE>1</VALUE>
+							<NUMOFDEC>0</NUMOFDEC>
+							<SIGN>+</SIGN>
+							<UOM>EA</UOM>
+						</QUANTITY>
+						<SITELEVEL index="1">DEFAULT</SITELEVEL>
+						<PACKING>DEFAULT</PACKING>
+					</PRCLSTLINE_USERAREA>
+				</PRCLSTLINE>
+			</PRICELIST>
+		</GET_PRICELIST>
+	</DATAAREA>
+</GET_PRICELIST_002>]]</skf9:xmlContent>
+		<skf9:messageType>XC27</skf9:messageType>
+    <skf9:messageTypeVersion>0100</skf9:messageTypeVersion>
+    <skf9:sender>PTPB2UST</skf9:sender>
+    <skf9:transactionID>PTPB2UST_202006010911</skf9:transactionID>
+</skf9:gaiaWs>

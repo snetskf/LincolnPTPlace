@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.skf.com/oagis/9/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://www.skf.com/oagis/9" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.skf.com/oagis/9/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.skf.com/oagis/9/">
+      <s:import namespace="http://www.skf.com/oagis/9" />
+      <s:element name="GetHostPing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:gaiaWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHostPingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHostPingResult" nillable="true">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessPO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:gaiaWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessPOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessPOResult" nillable="true">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListSalesOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:gaiaWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListSalesOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetListSalesOrderResult" nillable="true">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:gaiaWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSalesOrderResult" nillable="true">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" ref="s1:gaiaWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPriceListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPriceListResult" nillable="true">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.skf.com/oagis/9">
+      <s:element name="gaiaWs" nillable="true">
+        <s:complexType>
+          <s:annotation>
+            <s:appinfo>
+              <keepNamespaceDeclarations>x</keepNamespaceDeclarations>
+            </s:appinfo>
+          </s:annotation>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlContent" />
+            <s:element minOccurs="0" maxOccurs="1" name="messageType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetHostPingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHostPing" />
+  </wsdl:message>
+  <wsdl:message name="GetHostPingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHostPingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessPOSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessPO" />
+  </wsdl:message>
+  <wsdl:message name="ProcessPOSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListSalesOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListSalesOrder" />
+  </wsdl:message>
+  <wsdl:message name="GetListSalesOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListSalesOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesOrder" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriceList" />
+  </wsdl:message>
+  <wsdl:message name="GetPriceListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriceListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LincolnWebSoap">
+    <wsdl:operation name="GetHostPing">
+      <wsdl:input message="tns:GetHostPingSoapIn" />
+      <wsdl:output message="tns:GetHostPingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPO">
+      <wsdl:input message="tns:ProcessPOSoapIn" />
+      <wsdl:output message="tns:ProcessPOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListSalesOrder">
+      <wsdl:input message="tns:GetListSalesOrderSoapIn" />
+      <wsdl:output message="tns:GetListSalesOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesOrder">
+      <wsdl:input message="tns:GetSalesOrderSoapIn" />
+      <wsdl:output message="tns:GetSalesOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceList">
+      <wsdl:input message="tns:GetPriceListSoapIn" />
+      <wsdl:output message="tns:GetPriceListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LincolnWebSoap" type="tns:LincolnWebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHostPing">
+      <soap:operation soapAction="http://www.skf.com/oagis/9/GetHostPing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPO">
+      <soap:operation soapAction="http://www.skf.com/oagis/9/ProcessPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSalesOrder">
+      <soap:operation soapAction="http://www.skf.com/oagis/9/GetListSalesOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesOrder">
+      <soap:operation soapAction="http://www.skf.com/oagis/9/GetSalesOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceList">
+      <soap:operation soapAction="http://www.skf.com/oagis/9/GetPriceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LincolnWebSoap12" type="tns:LincolnWebSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetHostPing">
+      <soap12:operation soapAction="http://www.skf.com/oagis/9/GetHostPing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPO">
+      <soap12:operation soapAction="http://www.skf.com/oagis/9/ProcessPO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListSalesOrder">
+      <soap12:operation soapAction="http://www.skf.com/oagis/9/GetListSalesOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesOrder">
+      <soap12:operation soapAction="http://www.skf.com/oagis/9/GetSalesOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceList">
+      <soap12:operation soapAction="http://www.skf.com/oagis/9/GetPriceList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LincolnWeb">
+    <wsdl:port name="LincolnWebSoap" binding="tns:LincolnWebSoap">
+      <soap:address location="https://localhost:44366/LincolnWeb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LincolnWebSoap12" binding="tns:LincolnWebSoap12">
+      <soap12:address location="https://localhost:44366/LincolnWeb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

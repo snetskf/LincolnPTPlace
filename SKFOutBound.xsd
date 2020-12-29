@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:skf9="http://www.skf.com/oagis/9" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.skf.com/oagis/9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="gaiaWs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="xmlContent" type="xs:string" />
+        <xs:element name="messageType" type="xs:string" />
+        <xs:element name="messageTypeVersion" type="xs:string" />
+        <xs:element name="sender" type="xs:string" />
+        <xs:element name="transactionID" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

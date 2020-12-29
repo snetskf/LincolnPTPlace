@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skf9:gaiaWs xmlns:skf9="http://www.skf.com/oagis/9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <skf9:xmlContent>[  XML  ]</skf9:xmlContent>
+    <skf9:messageType>[ Message_type ]</skf9:messageType>
+    <skf9:messageTypeVersion>[ Message_type_Version ]</skf9:messageTypeVersion>
+    <skf9:sender>[ partner_ID ]</skf9:sender>
+    <skf9:transactionID>[ transaction_ID ]</skf9:transactionID>
+</skf9:gaiaWs>

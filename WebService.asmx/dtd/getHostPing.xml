@@ -1,0 +1,53 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "no"?>
+<!DOCTYPE GET_PRICELIST_001 SYSTEM "..\dtd\colinx_get_hostping_001.dtd">
+<!--
+    $Revision: 1.4 $
+    CoLinx, LLC
+
+	 Cowden	7.0.0   02/21/2001	Initial Release 
+
+	 Notes:
+		Example Document for a PTPlace HOSTPING
+
+-->
+<GET_HOSTPING_001>
+	<CNTROLAREA>
+		<BSR>
+			<VERB>GET</VERB>
+			<NOUN>HOSTPING</NOUN>
+			<REVISION>001</REVISION>
+		</BSR>
+		<SENDER>
+			<LOGICALID>SKFMRC</LOGICALID>      													<!-- The Store: six characters. While the FROM and TO
+																												  Portions of the AUTHID can include CLXPTP, the LOGICALID
+																												  always refers to the store the document relates to. Since a 
+																												  since all user requests are related to a store, the LogicalID
+																												  refers to that store	 -->
+			<COMPONENT>PTPLACE</COMPONENT>   													<!-- Always PTPLACE -->
+			<TASK>PING</TASK>																			<!-- Originating Event -->
+			<REFERENCEID>BV10293848</REFERENCEID>												<!-- Colinx provides userid of requesting user -->
+			<CONFIRMATION>1</CONFIRMATION>														<!-- only confirm on error allowed for this doc -->
+			<LANGUAGE>ENG</LANGUAGE>																<!-- CoLinx allows only ENG here -->
+			<CODEPAGE>UTF-8</CODEPAGE>																<!-- CoLinx allows only UTF-8 codepage -->
+			<AUTHID>CLXPTP-SKFMRC-00000000000123456789-0001</AUTHID>						<!-- SENDER-RECIPIENT-dddddddddddddddddddd-xxxx   -->
+		</SENDER>																						<!-- The third portion is a transaction number, which should remain
+																											     Unchanged for all documents that are part of a single
+																											     Conversation.  Backend systems should increment the sequence
+																											     number when replying instead of creating a new transaction number -->	
+		<DATETIME qualifier="CREATION">															<!-- Document creation date -->
+			<YEAR>2001</YEAR>
+			<MONTH>03</MONTH>
+			<DAY>02</DAY>
+			<HOUR>17</HOUR>
+			<MINUTE>59</MINUTE>
+			<SECOND>00</SECOND>
+			<SUBSECOND>0000</SUBSECOND>
+			<TIMEZONE>-0500</TIMEZONE>
+		</DATETIME>
+	</CNTROLAREA>
+	<DATAAREA>
+		<GETHOSTPING>
+			<COLINX_HOSTID>ptbroker1.colinx.com</COLINX_HOSTID>									<!-- hostname of the originator -->
+		</GETHOSTPING>
+	</DATAAREA>
+</GET_HOSTPING_001>

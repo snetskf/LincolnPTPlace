@@ -1,0 +1,17 @@
+bod- for whole
+
+show price 0000 even no stock
+
+Sitelevel= JC
+Sitelevel= STL
+
+Logicalid =linusa
+aleusa
+
+reply= ref id =authid
+
+transactionid=?
+
+sunday =6-2 am cet
+
+show price list= orderable

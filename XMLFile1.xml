@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SHOW_PRICELIST_002 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/colinx_show_pricelist_002">
+  <CNTROLAREA>
+    <BSR>
+      <VERB>SHOW</VERB>
+      <NOUN>PRICELIST</NOUN>
+      <REVISION>002</REVISION>
+    </BSR>
+    <SENDER>
+      <LOGICALID>LINUSA</LOGICALID>
+      <COMPONENT>PTPLACE</COMPONENT>
+      <TASK>SHOW</TASK>
+      <REFERENCEID>CLXPTP-LINUSA-00016074537853570397-0001</REFERENCEID>
+      <CONFIRMATION>0</CONFIRMATION>
+      <LANGUAGE>ENG</LANGUAGE>
+      <CODEPAGE>UTF-8</CODEPAGE>
+      <AUTHID>LINUSA-CLXPTP-00016074537853570397-0002</AUTHID>
+    </SENDER>
+    <DATETIME qualifier="CREATION">
+      <YEAR>2020</YEAR>
+      <MONTH>12</MONTH>
+      <DAY>11</DAY>
+      <HOUR>16</HOUR>
+      <MINUTE>42</MINUTE>
+      <SECOND>34</SECOND>
+      <SUBSECOND>10</SUBSECOND>
+      <TIMEZONE>-360</TIMEZONE>
+    </DATETIME>
+  </CNTROLAREA>
+  <DATAAREA>
+    <SHOW_PRICELIST>
+      <PRICELIST>
+        <PRICELSTID>Customer</PRICELSTID>
+        <CURRENCY>USD</CURRENCY>
+        <PARTNRID>18250</PARTNRID>
+        <PRCLSTLINE>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>1759500</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>1759500</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>1759500</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <LINENUM>1</LINENUM>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1442</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1442</PARTKEY>
+          </PARTREF>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1442</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1442</PARTKEY>
+          </PARTREF>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1442</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1442</PARTKEY>
+          </PARTREF>
+          <PRCLSTLINE_USERAREA>
+            <COLINX_INSTOCK>INSTOCK</COLINX_INSTOCK>
+            <DATETIME qualifier="REQUIRED">
+              <YEAR>2020</YEAR>
+              <MONTH>12</MONTH>
+              <DAY>8</DAY>
+              <HOUR>16</HOUR>
+              <MINUTE>0</MINUTE>
+              <SECOND>0</SECOND>
+              <SUBSECOND>0</SUBSECOND>
+              <TIMEZONE>-0500</TIMEZONE>
+            </DATETIME>
+            <QUANTITY qualifier="ORDERED">
+              <VALUE>1</VALUE>
+              <NUMOFDEC>0</NUMOFDEC>
+              <SIGN>+</SIGN>
+              <UOM>EA</UOM>
+            </QUANTITY>
+            <COLINX_STATUS>
+              <REASONCODE>0000</REASONCODE>
+            </COLINX_STATUS>
+            <SITELEVEL index="1">STL</SITELEVEL>
+            <COLINX_PRODAVAIL>
+              <DEFAULTIND>Y</DEFAULTIND>
+              <COLINX_SORTORDER>1</COLINX_SORTORDER>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+            </COLINX_PRODAVAIL>
+          </PRCLSTLINE_USERAREA>
+        </PRCLSTLINE>
+        <PRCLSTLINE>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>180886</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>180886</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <OPERAMT qualifier="UNIT" type="T">
+            <VALUE>180886</VALUE>
+            <NUMOFDEC>4</NUMOFDEC>
+            <SIGN>+</SIGN>
+            <CURRENCY>USD</CURRENCY>
+            <UOMVALUE>1</UOMVALUE>
+            <UOMNUMDEC>0</UOMNUMDEC>
+            <UOM>EA</UOM>
+          </OPERAMT>
+          <LINENUM>2</LINENUM>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1142</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1142</PARTKEY>
+          </PARTREF>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1142</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1142</PARTKEY>
+          </PARTREF>
+          <PARTREF>
+            <PARTTYPE>Manufacturer</PARTTYPE>
+            <PARTNO>1142</PARTNO>
+            <PARTCLASS>4460</PARTCLASS>
+            <PARTKEY>1142</PARTKEY>
+          </PARTREF>
+          <PRCLSTLINE_USERAREA>
+            <COLINX_INSTOCK>INSTOCK</COLINX_INSTOCK>
+            <DATETIME qualifier="REQUIRED">
+              <YEAR>2020</YEAR>
+              <MONTH>12</MONTH>
+              <DAY>8</DAY>
+              <HOUR>16</HOUR>
+              <MINUTE>0</MINUTE>
+              <SECOND>0</SECOND>
+              <SUBSECOND>0</SUBSECOND>
+              <TIMEZONE>-0500</TIMEZONE>
+            </DATETIME>
+            <QUANTITY qualifier="ORDERED">
+              <VALUE>1</VALUE>
+              <NUMOFDEC>0</NUMOFDEC>
+              <SIGN>+</SIGN>
+              <UOM>EA</UOM>
+            </QUANTITY>
+            <COLINX_STATUS>
+              <REASONCODE>0000</REASONCODE>
+            </COLINX_STATUS>
+            <SITELEVEL index="1">STL</SITELEVEL>
+            <COLINX_PRODAVAIL>
+              <DEFAULTIND>Y</DEFAULTIND>
+              <COLINX_SORTORDER>1</COLINX_SORTORDER>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>767</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+              <WHSEDETAIL>
+                <QUANTITY qualifier="AVAILABLE">
+                  <VALUE>1873</VALUE>
+                  <NUMOFDEC>0</NUMOFDEC>
+                  <SIGN>+</SIGN>
+                  <UOM>EA</UOM>
+                </QUANTITY>
+                <COLINX_AVAILDESC>STOCK</COLINX_AVAILDESC>
+                <SITELEVEL index="1">STL</SITELEVEL>
+                <ORDERABLE>Y</ORDERABLE>
+                <PRIORITY>Primary</PRIORITY>
+                <DEFAULTIND>Y</DEFAULTIND>
+              </WHSEDETAIL>
+            </COLINX_PRODAVAIL>
+          </PRCLSTLINE_USERAREA>
+        </PRCLSTLINE>
+      </PRICELIST>
+    </SHOW_PRICELIST>
+  </DATAAREA>
+</SHOW_PRICELIST_002>

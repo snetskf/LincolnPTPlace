@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skf9:gaiaWs xmlns:skf9="http://www.skf.com/oagis/9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <skf9:xmlContent>  
+<GET_HOSTPING_001>
+	<CNTROLAREA>
+		<BSR>
+			<VERB>GET</VERB>
+			<NOUN>HOSTPING</NOUN>
+			<REVISION>001</REVISION>
+		</BSR> 
+		<SENDER>
+			<LOGICALID>SKFMRC</LOGICALID>      												 
+			<COMPONENT>PTPLACE</COMPONENT>   													<!-- Always PTPLACE -->
+			<TASK>PING</TASK>																			<!-- Originating Event -->
+			<REFERENCEID>BV10293848</REFERENCEID>												<!-- Colinx provides userid of requesting user -->
+			<CONFIRMATION>1</CONFIRMATION>														<!-- only confirm on error allowed for this doc -->
+			<LANGUAGE>ENG</LANGUAGE>																<!-- CoLinx allows only ENG here -->
+			<CODEPAGE>UTF-8</CODEPAGE>																<!-- CoLinx allows only UTF-8 codepage -->
+			<AUTHID>CLXPTP-SKFMRC-00000000000123456789-0001</AUTHID>						<!-- SENDER-RECIPIENT-dddddddddddddddddddd-xxxx   -->
+		</SENDER>																						 	
+		<DATETIME qualifier="CREATION">															<!-- Document creation date -->
+			<YEAR>2001</YEAR>
+			<MONTH>03</MONTH>
+			<DAY>02</DAY>
+			<HOUR>17</HOUR>
+			<MINUTE>59</MINUTE>
+			<SECOND>00</SECOND>
+			<SUBSECOND>0000</SUBSECOND>
+			<TIMEZONE>-0500</TIMEZONE>
+		</DATETIME>
+	</CNTROLAREA>
+	<DATAAREA>
+		<GETHOSTPING>
+			<COLINX_HOSTID>ptbroker1.colinx.com</COLINX_HOSTID>									<!-- hostname of the originator -->
+		</GETHOSTPING>
+	</DATAAREA>
+<DATAAREA>
+		<GETHOSTPING>
+			<COLINX_HOSTID>ptbroker2.colinx.com</COLINX_HOSTID>									<!-- hostname of the originator -->
+		</GETHOSTPING>
+	</DATAAREA>
+</GET_HOSTPING_001>
+</skf9:xmlContent>
+    <skf9:messageType>XC40</skf9:messageType>
+    <skf9:messageTypeVersion>0100</skf9:messageTypeVersion>
+    <skf9:sender>PTPWSUST</skf9:sender>
+    <skf9:transactionID>A39D928501725C58B617FCDE5E4884F4</skf9:transactionID>
+</skf9:gaiaWs>

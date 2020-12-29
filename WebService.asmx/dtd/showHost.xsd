@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/colinx_show_hostping_001" elementFormDefault="qualified" targetNamespace="http://tempuri.org/colinx_show_hostping_001" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AUTHID" type="xs:string" />
+  <xs:element name="CODEPAGE" type="xs:string" />
+  <xs:element name="COMPONENT" type="xs:string" />
+  <xs:element name="CONFIRMATION" type="xs:string" />
+  <xs:element name="DAY" type="xs:string" />
+  <xs:element name="HOUR" type="xs:string" />
+  <xs:element name="LANGUAGE" type="xs:string" />
+  <xs:element name="LOGICALID" type="xs:string" />
+  <xs:element name="MINUTE" type="xs:string" />
+  <xs:element name="MONTH" type="xs:string" />
+  <xs:element name="NOUN">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="value" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="REFERENCEID" type="xs:string" />
+  <xs:element name="REVISION">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="value" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SECOND" type="xs:string" />
+  <xs:element name="SUBSECOND" type="xs:string" />
+  <xs:element name="TASK" type="xs:string" />
+  <xs:element name="TIMEZONE" type="xs:string" />
+  <xs:element name="VERB">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="value" type="xs:string" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="YEAR" type="xs:string" />
+  <xs:element name="BSR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="VERB" />
+        <xs:element ref="NOUN" />
+        <xs:element ref="REVISION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CNTROLAREA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="BSR" />
+        <xs:element ref="SENDER" />
+        <xs:element ref="DATETIME" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="COLINX_MESSAGE" type="xs:string" />
+  <xs:element name="SENDER">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LOGICALID" />
+        <xs:element ref="COMPONENT" />
+        <xs:element ref="TASK" />
+        <xs:element ref="REFERENCEID" />
+        <xs:element ref="CONFIRMATION" />
+        <xs:element ref="LANGUAGE" />
+        <xs:element ref="CODEPAGE" />
+        <xs:element ref="AUTHID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DATETIME">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="YEAR" />
+        <xs:element ref="MONTH" />
+        <xs:element ref="DAY" />
+        <xs:element ref="HOUR" />
+        <xs:element ref="MINUTE" />
+        <xs:element ref="SECOND" />
+        <xs:element ref="SUBSECOND" />
+        <xs:element ref="TIMEZONE" />
+      </xs:sequence>
+      <xs:attribute name="qualifier" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="ACCOUNTING" />
+            <xs:enumeration value="ACTEND" />
+            <xs:enumeration value="ACTSTART" />
+            <xs:enumeration value="APPREQ" />
+            <xs:enumeration value="APPROVAL" />
+            <xs:enumeration value="AVAILABLE" />
+            <xs:enumeration value="BKTEND" />
+            <xs:enumeration value="BKTSTART" />
+            <xs:enumeration value="CANCEL" />
+            <xs:enumeration value="CHANGEDATE" />
+            <xs:enumeration value="COMPDATE" />
+            <xs:enumeration value="CREATION" />
+            <xs:enumeration value="CUMULATIVE" />
+            <xs:enumeration value="DELIVACT" />
+            <xs:enumeration value="DELIVSCHED" />
+            <xs:enumeration value="DISCNT" />
+            <xs:enumeration value="DOCUMENT" />
+            <xs:enumeration value="DUE" />
+            <xs:enumeration value="EARLSTEFF" />
+            <xs:enumeration value="EARLSTSHIP" />
+            <xs:enumeration value="EFFECTIVE" />
+            <xs:enumeration value="ENGCHG" />
+            <xs:enumeration value="EXECFINISH" />
+            <xs:enumeration value="EXECSTART" />
+            <xs:enumeration value="EXPIRATION" />
+            <xs:enumeration value="FAILDATE" />
+            <xs:enumeration value="FORECASTF" />
+            <xs:enumeration value="FORECASTS" />
+            <xs:enumeration value="FROM" />
+            <xs:enumeration value="GENERATION" />
+            <xs:enumeration value="IMPL" />
+            <xs:enumeration value="INVOICE" />
+            <xs:enumeration value="LABORFINSH" />
+            <xs:enumeration value="LABORSTART" />
+            <xs:enumeration value="LASTUSED" />
+            <xs:enumeration value="LOADING" />
+            <xs:enumeration value="MATCHING" />
+            <xs:enumeration value="MSMENTDATE" />
+            <xs:enumeration value="NEEDDELV" />
+            <xs:enumeration value="OPFINISH" />
+            <xs:enumeration value="OPSTART" />
+            <xs:enumeration value="PAYEND" />
+            <xs:enumeration value="PLANEND" />
+            <xs:enumeration value="PLANSTART" />
+            <xs:enumeration value="PO" />
+            <xs:enumeration value="PROMDELV" />
+            <xs:enumeration value="PROMSHIP" />
+            <xs:enumeration value="PYMTTERM" />
+            <xs:enumeration value="RECEIVED" />
+            <xs:enumeration value="REPORTDATE" />
+            <xs:enumeration value="REPORTNGFN" />
+            <xs:enumeration value="REPORTNGST" />
+            <xs:enumeration value="REQUIRED" />
+            <xs:enumeration value="RESORCDWNF" />
+            <xs:enumeration value="RESORCDWNS" />
+            <xs:enumeration value="RSPDDATE" />
+            <xs:enumeration value="RSPDOCGEN" />
+            <xs:enumeration value="SCHEND" />
+            <xs:enumeration value="SCHSTART" />
+            <xs:enumeration value="SETUPFINSH" />
+            <xs:enumeration value="SETUPSTART" />
+            <xs:enumeration value="SHIP" />
+            <xs:enumeration value="SHIPSCHED" />
+            <xs:enumeration value="STATUSDATE" />
+            <xs:enumeration value="TEARDOWNF" />
+            <xs:enumeration value="TEARDOWNS" />
+            <xs:enumeration value="TO" />
+            <xs:enumeration value="OTHER" />
+            <xs:enumeration value="COLINX.CARDEXP" />
+            <xs:enumeration value="COLINX.REQUESTED" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="T" />
+            <xs:enumeration value="F" />
+            <xs:enumeration value="OTHER" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="index" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="COLINX_HOSTID" type="xs:string" />
+  <xs:element name="SHOW_HOSTPING_001">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="CNTROLAREA" />
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="DATAAREA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DATAAREA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SHOWHOSTPING" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SHOWHOSTPING">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="COLINX_HOSTID" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="COLINX_MESSAGE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
