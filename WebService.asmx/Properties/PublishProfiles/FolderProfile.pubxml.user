@@ -91,10 +91,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/27/2016 21:50:24</publishTime>
     </File>
     <File Include="bin/WebService.asmx.dll">
-      <publishTime>12/09/2020 11:01:01</publishTime>
+      <publishTime>01/05/2021 14:35:01</publishTime>
     </File>
     <File Include="bin/WebService.asmx.pdb">
-      <publishTime>12/09/2020 11:01:01</publishTime>
+      <publishTime>01/05/2021 14:35:01</publishTime>
     </File>
     <File Include="colinx_getlist_salesorder_005.dtd">
       <publishTime>06/10/2020 07:21:48</publishTime>
@@ -130,7 +130,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/02/2020 16:21:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/08/2020 14:17:30</publishTime>
+      <publishTime>01/05/2021 14:20:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

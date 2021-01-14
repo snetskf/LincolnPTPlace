@@ -32,3 +32,4 @@ C:\Projects\WebService\WebService.asmx\bin\Microsoft.CodeDom.Providers.DotNetCom
 C:\Projects\WebService\WebService.asmx\obj\Release\WebService.asmx.csproj.CopyComplete
 C:\Projects\WebService\WebService.asmx\obj\Release\WebService.asmx.dll
 C:\Projects\WebService\WebService.asmx\obj\Release\WebService.asmx.pdb
+C:\Projects\WebService\WebService.asmx\obj\Release\WebService.asmx.csprojAssemblyReference.cache
