@@ -32,3 +32,5 @@ C:\Projects\WebService\WebService.asmx\bin\Microsoft.CodeDom.Providers.DotNetCom
 C:\Projects\WebService\WebService.asmx\obj\Debug\WebService.asmx.csproj.CopyComplete
 C:\Projects\WebService\WebService.asmx\obj\Debug\WebService.asmx.dll
 C:\Projects\WebService\WebService.asmx\obj\Debug\WebService.asmx.pdb
+C:\Projects\WebService\WebService.asmx\obj\Debug\WebService.asmx.csprojAssemblyReference.cache
+C:\Projects\WebService\WebService.asmx\obj\Debug\WebService.asmx.csproj.CoreCompileInputs.cache

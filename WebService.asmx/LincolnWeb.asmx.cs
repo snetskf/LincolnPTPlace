@@ -2618,7 +2618,7 @@ namespace WebService.asmx
 
                     SQLShowControlArea.CommandText = "sp_AckPOControlArea";
                     SQLShowControlArea.CommandType = CommandType.StoredProcedure;
-                    SQLShowControlArea.CommandTimeout = 300;
+                    SQLShowControlArea.CommandTimeout = 600;
 
                     SQLShowControlArea.Parameters.Add("@GUID", SqlDbType.NVarChar, 60);
                     SQLShowControlArea.Parameters.Add("@TransId", SqlDbType.NVarChar, 60);
@@ -3560,6 +3560,8 @@ namespace WebService.asmx
                                     d[o] = new showPriceList.DATAAREA();
                                     SHOW_PRICELIST sh = new SHOW_PRICELIST();
                                     d[o].SHOW_PRICELIST = sh;
+                                    int[] checklinenum = new int[100];
+
                                     for (int p = 0; p < Convert.ToInt16(dt.Rows[0]["MaxPriceListLine"].ToString()); p++)
                                     {
                                         showPriceList.OPERAMT[] opr = new showPriceList.OPERAMT[dt.Rows.Count];
@@ -3567,7 +3569,7 @@ namespace WebService.asmx
                                         showPriceList.COLINX_PRODAVAIL[] prodavail = new showPriceList.COLINX_PRODAVAIL[dt.Rows.Count];
                                         showPriceList.PARTREF[] dpr = new showPriceList.PARTREF[Convert.ToInt16(dt.Rows.Count.ToString())];
                                         // showPriceList.WHSEDETAIL[] whs = new showPriceList.WHSEDETAIL[Convert.ToInt16(dt.Rows.Count.ToString())];
-                                        showPriceList.WHSEDETAIL[] whs = new showPriceList.WHSEDETAIL[20];
+                                        showPriceList.WHSEDETAIL[] whs = new showPriceList.WHSEDETAIL[100];
                                         showPriceList.QUANTITY[] qtywhs = new showPriceList.QUANTITY[dt.Rows.Count];
                                         showPriceList.SITELEVEL[] stewhs = new showPriceList.SITELEVEL[dt.Rows.Count];
                                         showPriceList.DATETIME usrdt = new showPriceList.DATETIME();
@@ -3590,194 +3592,216 @@ namespace WebService.asmx
                                         //    //opr[q].VALUE = dt.Rows[o]["Price"].ToString();
                                         //}
 
+
+                                        for (int line = 0; line < 100; line++)
+                                        {
+                                            checklinenum[line] = -1;
+                                        }
+
+                                        int index = Array.IndexOf(checklinenum, p);
+                                        checklinenum[p] = p;
+
                                         for (int r = 0; r < dt.Rows.Count; r++) //Convert.ToInt16(dt.Rows[0]["MaxPartRef"].ToString())
                                         {
+
+
                                             if (Convert.ToInt16(dt.Rows[r]["PriceListLine"].ToString()) == p)
                                             {
-
-                                                opr[partrefi] = new OPERAMT();
-                                                opr[partrefi].qualifier = OPERAMTQualifier.UNIT; opr[partrefi].type = OPERAMTType.T;
-                                                opr[partrefi].VALUE = dt.Rows[r]["Price"].ToString();
-                                                opr[partrefi].NUMOFDEC = dt.Rows[r]["OprDec"].ToString();
-                                                opr[partrefi].SIGN = dt.Rows[r]["SignVal"].ToString();
-                                                opr[partrefi].CURRENCY = dt.Rows[r]["CURRENCY"].ToString();
-                                                opr[partrefi].UOM = dt.Rows[r]["OprUOM"].ToString();
-                                                opr[partrefi].UOMVALUE = "1"; opr[partrefi].UOMNUMDEC = "0";
-
-                                                dpr[partrefi] = new PARTREF();
-                                                dpr[partrefi].PARTNO = dt.Rows[r]["Item"].ToString();
-                                                dpr[partrefi].PARTKEY = dt.Rows[r]["ItemKey"].ToString();
-                                                dpr[partrefi].PARTTYPE = dt.Rows[r]["type"].ToString();
-                                                dpr[partrefi].PARTCLASS = dt.Rows[r]["PartClass"].ToString();
-
-                                                dp[p].LINENUM = dt.Rows[r]["LineNum"].ToString();
-                                                dp[p].PRCLSTLINE_USERAREA = new PRCLSTLINE_USERAREA();
-                                                usrdt = new showPriceList.DATETIME();
-
-
-                                                dp[p].PRCLSTLINE_USERAREA.COLINX_INSTOCK = dt.Rows[r]["COLINX_INSTOCK"].ToString();
-
-                                               
-
-                                                usrdt.YEAR = dt.Rows[r]["Year"].ToString();
-                                                usrdt.MONTH = dt.Rows[r]["Month"].ToString();
-                                                usrdt.DAY = dt.Rows[r]["Day"].ToString();
-                                                usrdt.HOUR = dt.Rows[r]["Hr"].ToString();
-                                                usrdt.MINUTE = dt.Rows[r]["Minute"].ToString();
-                                                usrdt.SECOND = dt.Rows[r]["Second"].ToString();
-                                                usrdt.SUBSECOND = dt.Rows[r]["SubSecond"].ToString();
-                                                usrdt.TIMEZONE = dt.Rows[r]["TimeZone"].ToString();
-                                                usrdt.qualifier = showPriceList.DATETIMEQualifier.REQUIRED;
-                                                dp[p].PRCLSTLINE_USERAREA.DATETIME = usrdt;
-
-
-                                                // dp[p].PRCLSTLINE_USERAREA = new PRCLSTLINE_USERAREA();
-                                                qty[0] = new QUANTITY();
-                                                qty[0].qualifier = QUANTITYQualifier.ORDERED;
-                                                qty[0].SIGN = "+";
-                                                qty[0].VALUE = dt.Rows[r]["Qty"].ToString();
-                                                qty[0].NUMOFDEC = "0";
-                                                qty[0].UOM = dt.Rows[r]["QtyUOM"].ToString();
-                                                dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS = new COLINX_STATUS();
-                                                dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS.REASONCODE = dt.Rows[r]["ReasonCode"].ToString();
-                                                // dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS.DESCRIPTN
-                                                dp[p].PRCLSTLINE_USERAREA.QUANTITY = qty;
-                                                dp[p].PRCLSTLINE_USERAREA.SITELEVEL = new SITELEVEL();
-                                                dp[p].PRCLSTLINE_USERAREA.SITELEVEL.index = "1";// dt.Rows[r]["LineNum"].ToString();
-                                                dp[p].PRCLSTLINE_USERAREA.SITELEVEL.Value = dt.Rows[r]["SiteLevelOuter"].ToString();
-                                                //  dp[p].PRCLSTLINE_USERAREA.SITELEVEL.index = dt.Rows[r]["SiteLevel"].ToString();
-                                                
-                                                prodavail[0] = new COLINX_PRODAVAIL();
-                                                prodavail[0].DEFAULTIND = "Y";
-                                                prodavail[0].COLINX_SORTORDER = "1";
-                                                
-                                                //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].VALUE ="1";
-                                                //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].NUMOFDEC = "0";
-                                                //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].SIGN = "+";
-                                                //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].UOM = "EA";
-                                                //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].qualifier = QUANTITYQualifier.LOTSIZEMIN;
-
-                                                prodavail[0].COLINX_SORTORDER = "1";
-                                                qtywhs[0] = new QUANTITY(); stewhs[0] = new SITELEVEL();
-
-                                                whs[0] = new WHSEDETAIL();
-                                                qtywhs[0].qualifier = QUANTITYQualifier.AVAILABLE;
-                                                qtywhs[0].VALUE = dt.Rows[r]["AvailQty"].ToString();
-                                                qtywhs[0].NUMOFDEC = "0";
-                                                qtywhs[0].SIGN = "+";
-                                                qtywhs[0].UOM = "EA";
-                                                whs[0].QUANTITY = qtywhs[0];
-                                              
- 
-                                                stewhs[0].Value = dt.Rows[r]["SiteLevelInner"].ToString();
-                                                stewhs[0].index = "1";
-                                                whs[0].SITELEVEL = stewhs[0]; 
-
-                                                whs[0].ORDERABLE = dt.Rows[r]["Orderable"].ToString();
-                                                whs[0].PRIORITY = "Primary";
-                                                whs[0].DEFAULTIND = "Y";
-
-                                                if (dt.Rows[r]["Yrmypromise"].ToString() == "1900")
+                                                if (index == -1)
                                                 {
-                                                    whs[0].Item = dt.Rows[r]["Colinx_availDesc"].ToString();
-                                                }
-                                                else
-                                                {
+                                                    index = Array.IndexOf(checklinenum, p);
 
-                                                    showPriceList.DATETIME availdt = new showPriceList.DATETIME();
-                                                    availdt.YEAR = dt.Rows[r]["Yrmypromise"].ToString();
-                                                    availdt.MONTH = dt.Rows[r]["Mthmypromise"].ToString();
-                                                    availdt.DAY = dt.Rows[r]["Daymypromise"].ToString();
-                                                    availdt.HOUR = "00";
-                                                    availdt.MINUTE = "00";
-                                                    availdt.SECOND = "00";
-                                                    availdt.SUBSECOND = "00";
-                                                    availdt.TIMEZONE = dt.Rows[r]["TimeZone"].ToString();
-                                                    availdt.qualifier = showPriceList.DATETIMEQualifier.AVAILABLE; 
-                                                    whs[0].Item = availdt;
-                                                }
+                                                    opr[partrefi] = new OPERAMT();
+                                                    opr[partrefi].qualifier = OPERAMTQualifier.UNIT; opr[partrefi].type = OPERAMTType.T;
+                                                    opr[partrefi].VALUE = dt.Rows[r]["Price"].ToString();
+                                                    opr[partrefi].NUMOFDEC = dt.Rows[r]["OprDec"].ToString();
+                                                    opr[partrefi].SIGN = dt.Rows[r]["SignVal"].ToString();
+                                                    opr[partrefi].CURRENCY = dt.Rows[r]["CURRENCY"].ToString();
+                                                    opr[partrefi].UOM = dt.Rows[r]["OprUOM"].ToString();
+                                                    opr[partrefi].UOMVALUE = "1"; opr[partrefi].UOMNUMDEC = "0";
+
+                                                    dpr[partrefi] = new PARTREF();
+                                                    dpr[partrefi].PARTNO = dt.Rows[r]["Item"].ToString();
+                                                    dpr[partrefi].PARTKEY = dt.Rows[r]["ItemKey"].ToString();
+                                                    dpr[partrefi].PARTTYPE = dt.Rows[r]["type"].ToString();
+                                                    dpr[partrefi].PARTCLASS = dt.Rows[r]["PartClass"].ToString();
+
+                                                    dp[p].LINENUM = dt.Rows[r]["LineNum"].ToString();
+                                                    dp[p].PRCLSTLINE_USERAREA = new PRCLSTLINE_USERAREA();
+                                                    usrdt = new showPriceList.DATETIME();
 
 
-                                                int futurei = 0;
-                                                //12/29/2020 additional future availibility breakdown warehousedetails//
-                                                for (int k = 0; k < dt.Rows.Count; k++)  
-                                                {
-                                                    if (Convert.ToInt16(dt.Rows[k]["PASORT"].ToString()) > 0)
+                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_INSTOCK = dt.Rows[r]["COLINX_INSTOCK"].ToString();
+
+
+
+                                                    usrdt.YEAR = dt.Rows[r]["Year"].ToString();
+                                                    usrdt.MONTH = dt.Rows[r]["Month"].ToString();
+                                                    usrdt.DAY = dt.Rows[r]["Day"].ToString();
+                                                    usrdt.HOUR = dt.Rows[r]["Hr"].ToString();
+                                                    usrdt.MINUTE = dt.Rows[r]["Minute"].ToString();
+                                                    usrdt.SECOND = dt.Rows[r]["Second"].ToString();
+                                                    usrdt.SUBSECOND = dt.Rows[r]["SubSecond"].ToString();
+                                                    usrdt.TIMEZONE = dt.Rows[r]["TimeZone"].ToString();
+                                                    usrdt.qualifier = showPriceList.DATETIMEQualifier.REQUIRED;
+                                                    dp[p].PRCLSTLINE_USERAREA.DATETIME = usrdt;
+
+
+                                                    // dp[p].PRCLSTLINE_USERAREA = new PRCLSTLINE_USERAREA();
+                                                    qty[0] = new QUANTITY();
+                                                    qty[0].qualifier = QUANTITYQualifier.ORDERED;
+                                                    qty[0].SIGN = "+";
+                                                    qty[0].VALUE = dt.Rows[r]["Qty"].ToString();
+                                                    qty[0].NUMOFDEC = "0";
+                                                    qty[0].UOM = dt.Rows[r]["QtyUOM"].ToString();
+                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS = new COLINX_STATUS();
+                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS.REASONCODE = dt.Rows[r]["ReasonCode"].ToString();
+                                                    // dp[p].PRCLSTLINE_USERAREA.COLINX_STATUS.DESCRIPTN
+                                                    dp[p].PRCLSTLINE_USERAREA.QUANTITY = qty;
+                                                    dp[p].PRCLSTLINE_USERAREA.SITELEVEL = new SITELEVEL();
+                                                    dp[p].PRCLSTLINE_USERAREA.SITELEVEL.index = "1";// dt.Rows[r]["LineNum"].ToString();
+                                                    dp[p].PRCLSTLINE_USERAREA.SITELEVEL.Value = dt.Rows[r]["SiteLevelOuter"].ToString();
+                                                    //  dp[p].PRCLSTLINE_USERAREA.SITELEVEL.index = dt.Rows[r]["SiteLevel"].ToString();
+
+                                                    prodavail[0] = new COLINX_PRODAVAIL();
+                                                    prodavail[0].DEFAULTIND = "Y";
+                                                    prodavail[0].COLINX_SORTORDER = "1";
+
+                                                    //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].VALUE ="1";
+                                                    //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].NUMOFDEC = "0";
+                                                    //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].SIGN = "+";
+                                                    //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].UOM = "EA";
+                                                    //dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL[0].QUANTITY[0].qualifier = QUANTITYQualifier.LOTSIZEMIN;
+
+                                                    prodavail[0].COLINX_SORTORDER = "1";
+                                                    qtywhs[0] = new QUANTITY(); stewhs[0] = new SITELEVEL();
+
+                                                    whs[0] = new WHSEDETAIL();
+                                                    qtywhs[0].qualifier = QUANTITYQualifier.AVAILABLE;
+                                                    qtywhs[0].VALUE = dt.Rows[r]["AvailQty"].ToString();
+                                                    qtywhs[0].NUMOFDEC = "0";
+                                                    qtywhs[0].SIGN = "+";
+                                                    qtywhs[0].UOM = "EA";
+                                                    whs[0].QUANTITY = qtywhs[0];
+
+
+                                                    stewhs[0].Value = dt.Rows[r]["SiteLevelInner"].ToString();
+                                                    stewhs[0].index = "1";
+                                                    whs[0].SITELEVEL = stewhs[0];
+
+                                                    whs[0].ORDERABLE = dt.Rows[r]["Orderable"].ToString();
+                                                    whs[0].PRIORITY = "Primary";
+                                                    whs[0].DEFAULTIND = "Y";
+
+                                                    if (dt.Rows[r]["Yrmypromise"].ToString() == "1900")
                                                     {
-                                                        whs[futurei + 1] = new WHSEDETAIL();
-
-                                                        showPriceList.QUANTITY[] qtywhsfuture = new showPriceList.QUANTITY[dt.Rows.Count];
-                                                        showPriceList.SITELEVEL[] stewhsfuture = new showPriceList.SITELEVEL[dt.Rows.Count];
-                                                        showPriceList.DATETIME usrdtfuture = new showPriceList.DATETIME();
-                                                        qtywhsfuture[0] = new QUANTITY(); stewhsfuture[0] = new SITELEVEL();
-
-                                                        qtywhsfuture[0].qualifier = QUANTITYQualifier.AVAILABLE;
-                                                        qtywhsfuture[0].VALUE = dt.Rows[k]["AvailQty"].ToString();
-                                                        qtywhsfuture[0].NUMOFDEC = "0";
-                                                        qtywhsfuture[0].SIGN = "+";
-                                                        qtywhsfuture[0].UOM = "EA";
-                                                        whs[k + 1].QUANTITY = qtywhsfuture[0];
-
-
-                                                        stewhsfuture[0].Value = dt.Rows[k]["SiteLevelInner"].ToString();
-                                                        stewhsfuture[0].index = "1";
-                                                        whs[futurei + 1].SITELEVEL = stewhs[0];
-
-                                                        whs[futurei + 1].ORDERABLE = dt.Rows[k]["Orderable"].ToString();
-                                                        whs[futurei + 1].PRIORITY = "Primary";
-                                                        whs[futurei + 1].DEFAULTIND = "Y";
-
-                                                        if (dt.Rows[k]["Yrmypromise"].ToString() == "1900")
-                                                        {
-                                                            whs[futurei + 1].Item = dt.Rows[k]["Colinx_availDesc"].ToString();
-                                                        }
-                                                        else
-                                                        {
-
-                                                            showPriceList.DATETIME availdtfuture = new showPriceList.DATETIME();
-                                                            availdtfuture.YEAR = dt.Rows[k]["Yrmypromise"].ToString();
-                                                            availdtfuture.MONTH = dt.Rows[k]["Mthmypromise"].ToString();
-                                                            availdtfuture.DAY = dt.Rows[k]["Daymypromise"].ToString();
-                                                            availdtfuture.HOUR = "00";
-                                                            availdtfuture.MINUTE = "00";
-                                                            availdtfuture.SECOND = "00";
-                                                            availdtfuture.SUBSECOND = "00";
-                                                            availdtfuture.TIMEZONE = dt.Rows[k]["TimeZone"].ToString();
-                                                            availdtfuture.qualifier = showPriceList.DATETIMEQualifier.AVAILABLE;
-                                                            whs[futurei + 1].Item = availdtfuture;
-                                                        }
-                                                        futurei++;
+                                                        whs[0].Item = dt.Rows[r]["Colinx_availDesc"].ToString();
                                                     }
-                                                }
+                                                    //else
+                                                    //{
 
-                                                 ///////////////////////
+                                                    //    showPriceList.DATETIME availdt = new showPriceList.DATETIME();
+                                                    //    availdt.YEAR = dt.Rows[r]["Yrmypromise"].ToString();
+                                                    //    availdt.MONTH = dt.Rows[r]["Mthmypromise"].ToString();
+                                                    //    availdt.DAY = dt.Rows[r]["Daymypromise"].ToString();
+                                                    //    availdt.HOUR = "00";
+                                                    //    availdt.MINUTE = "00";
+                                                    //    availdt.SECOND = "00";
+                                                    //    availdt.SUBSECOND = "00";
+                                                    //    availdt.TIMEZONE = dt.Rows[r]["TimeZone"].ToString();
+                                                    //    availdt.qualifier = showPriceList.DATETIMEQualifier.AVAILABLE; 
+                                                    //    whs[0].Item = availdt;
+                                                    //}
+
+
+                                                    int futurei = 0;
+                                                    //12/29/2020 additional future availibility breakdown warehousedetails//
+                                                    for (int k = 0; k < dt.Rows.Count; k++)
+                                                    {
+                                                        if (Convert.ToInt16(dt.Rows[k]["PriceListLine"].ToString()) == p)
+                                                        {
+                                                            if (Convert.ToInt16(dt.Rows[k]["PASORT"].ToString()) > 0)
+                                                            {
+                                                                whs[futurei + 1] = new WHSEDETAIL();
+
+                                                                showPriceList.QUANTITY[] qtywhsfuture = new showPriceList.QUANTITY[dt.Rows.Count];
+                                                                showPriceList.SITELEVEL[] stewhsfuture = new showPriceList.SITELEVEL[dt.Rows.Count];
+                                                                showPriceList.DATETIME usrdtfuture = new showPriceList.DATETIME();
+                                                                qtywhsfuture[futurei] = new QUANTITY(); stewhsfuture[futurei] = new SITELEVEL();
+
+                                                                qtywhsfuture[futurei].qualifier = QUANTITYQualifier.AVAILABLE;
+                                                                qtywhsfuture[futurei].VALUE = dt.Rows[k]["PAQTY"].ToString();
+                                                                qtywhsfuture[futurei].NUMOFDEC = "0";
+                                                                qtywhsfuture[futurei].SIGN = "+";
+                                                                qtywhsfuture[futurei].UOM = "EA";
+                                                                whs[futurei + 1].QUANTITY = qtywhsfuture[futurei];
+
+
+                                                                stewhsfuture[futurei].Value = dt.Rows[k]["SiteLevelInner"].ToString();
+                                                                stewhsfuture[futurei].index = "1";
+                                                                whs[futurei + 1].SITELEVEL = stewhs[0];
+
+                                                                whs[futurei + 1].ORDERABLE = dt.Rows[k]["Orderable"].ToString();
+                                                                whs[futurei + 1].PRIORITY = "Primary";
+                                                                whs[futurei + 1].COLINX_SORTORDER = dt.Rows[k]["PASORT"].ToString();
+                                                                whs[futurei + 1].PRODORDID = dt.Rows[k]["PAORD"].ToString();
+                                                                whs[futurei + 1].PRDLINENUM = "1";
+                                                                whs[futurei + 1].DEFAULTIND = "Y";
+
+                                                                if (dt.Rows[k]["YRPODate"].ToString() == "1900")
+                                                                {
+                                                                    whs[futurei + 1].Item = dt.Rows[k]["Colinx_availDesc"].ToString();
+                                                                }
+                                                                else
+                                                                {
+
+                                                                    showPriceList.DATETIME availdtfuture = new showPriceList.DATETIME();
+                                                                    availdtfuture.YEAR = dt.Rows[k]["YRPODate"].ToString();
+                                                                    availdtfuture.MONTH = dt.Rows[k]["MthPODate"].ToString();
+                                                                    availdtfuture.DAY = dt.Rows[k]["DayPODate"].ToString();
+                                                                    availdtfuture.HOUR = "00";
+                                                                    availdtfuture.MINUTE = "00";
+                                                                    availdtfuture.SECOND = "00";
+                                                                    availdtfuture.SUBSECOND = "00";
+                                                                    availdtfuture.TIMEZONE = dt.Rows[k]["TimeZone"].ToString();
+                                                                    availdtfuture.qualifier = showPriceList.DATETIMEQualifier.AVAILABLE;
+                                                                    whs[futurei + 1].Item = availdtfuture;
+                                                                }
+                                                                futurei++;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    ///////////////////////
 
                                                     prodavail[0].WHSEDETAIL = whs;
-                                                
 
-                                                if (dt.Rows[r]["ReasonCode"].ToString() == "0000")
-                                                {
-                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
-                                                }
-                                                if (dt.Rows[r]["ReasonCode"].ToString() == "0400")
-                                                {
-                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
-                                                }
-                                                if (dt.Rows[r]["ReasonCode"].ToString() == "0401")
-                                                {
-                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
-                                                }
-                                                if (dt.Rows[r]["ReasonCode"].ToString() == "0402")
-                                                {
-                                                    dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
+
+                                                    if (dt.Rows[r]["ReasonCode"].ToString() == "0000")
+                                                    {
+                                                        dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
+                                                    }
+                                                    if (dt.Rows[r]["ReasonCode"].ToString() == "0400")
+                                                    {
+                                                        dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
+                                                    }
+                                                    if (dt.Rows[r]["ReasonCode"].ToString() == "0401")
+                                                    {
+                                                        dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
+                                                    }
+                                                    if (dt.Rows[r]["ReasonCode"].ToString() == "0402")
+                                                    {
+                                                        dp[p].PRCLSTLINE_USERAREA.COLINX_PRODAVAIL = prodavail;
+                                                    }
+
+                                                    d[o].SHOW_PRICELIST.PRICELIST.PARTNRID = dt.Rows[r]["Customer"].ToString();
+                                                    d[o].SHOW_PRICELIST.PRICELIST.CURRENCY = dt.Rows[r]["Currency"].ToString();
+                                                    d[o].SHOW_PRICELIST.PRICELIST.PRICELSTID = dt.Rows[r]["PriceListId"].ToString();
+                                                    partrefi++;
+
                                                 }
 
-                                                d[o].SHOW_PRICELIST.PRICELIST.PARTNRID = dt.Rows[r]["Customer"].ToString();
-                                                d[o].SHOW_PRICELIST.PRICELIST.CURRENCY = dt.Rows[r]["Currency"].ToString();
-                                                d[o].SHOW_PRICELIST.PRICELIST.PRICELSTID = dt.Rows[r]["PriceListId"].ToString();
-                                                partrefi++;
-                                                
-                                            }
+                                            } //checklinenum condition
                                         }
 
                                         dp[p].PARTREF = dpr;
@@ -4093,6 +4117,7 @@ namespace WebService.asmx
                     SQLShowSalesOrder.Connection = con;
 
                     SQLShowSalesOrder.CommandText = "sp_ShowOrderDataArea";
+                    SQLShowSalesOrder.CommandTimeout = 300;
                     SQLShowSalesOrder.CommandType = CommandType.StoredProcedure;
 
                     SQLShowSalesOrder.Parameters.Add("@GUID", SqlDbType.NVarChar, 60);
@@ -4279,7 +4304,7 @@ namespace WebService.asmx
                                                 sldtprmdel.SUBSECOND = "0000";
                                                 sldtprmdel.TIMEZONE = dt.Rows[p]["DetailTimeZone"].ToString();
                                                 sldtprmdel.qualifier = showsalesorder.DATETIMEQualifier.PROMDELV;
-                                             
+
                                                 if (dt.Rows[p]["PrmDelYr"].ToString() != "1900")
                                                 {
                                                     sldtarray[2] = sldtprmdel;
